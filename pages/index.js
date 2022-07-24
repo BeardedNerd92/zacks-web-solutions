@@ -32,7 +32,7 @@ export default function Home({ posts }) {
       <section className={Styles.Home}>
         <h1 className='text-center mb-5'>Recent Posts:</h1>
 
-        <div className='row row-cols-1 row-cols-md-2 g-4 container'>
+        <div className='row row-cols-1 row-cols-md-3 g-4 container'>
           {managePosts.length ? (
             managePosts.map((post, index) => (
               <div
@@ -48,7 +48,7 @@ export default function Home({ posts }) {
                     src={post.mainImage}
                     alt={post.title}
                   />
-                  <caption>Date Published: {post.publishedAt}</caption>
+                  <caption>Date Published: {post.category}</caption>
                 </div>
               </div>
             ))

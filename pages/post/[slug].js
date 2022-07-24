@@ -2,8 +2,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import { useState, useEffect } from "react";
 import { Toolbar } from "../../components/toolbar";
+import Styles from "../../styles/Posts.module.css";
 
-export function Post({ title, body, image }) {
+export function Post({ title, body, image, publishedAt }) {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -15,12 +16,22 @@ export function Post({ title, body, image }) {
   }, [image]);
 
   return (
-    <div>
+    <>
       <Toolbar />
-      <h1>{title}</h1>
-      {imageUrl && <img src={imageUrl} alt={title} />}
-      <BlockContent blocks={body} />
-    </div>
+      <section className='container'>
+        <h1 className='text-center mb-3'>{title}</h1>
+        <div className='d-flex justify-content-center'>
+          {imageUrl && (
+            <img className='img-fluid mb-5' src={imageUrl} alt={title} />
+          )}
+        </div>
+        <div className='d-flex'>
+          <caption className='text-center'>Published on: {publishedAt}</caption>
+        </div>
+
+        <BlockContent blocks={body} className='lh-lg' />
+      </section>
+    </>
   );
 }
 
@@ -41,7 +52,12 @@ export async function getServerSideProps(context) {
     return { notFound: true };
   } else {
     return {
-      props: { body: post.body, title: post.title, image: post.mainImage },
+      props: {
+        body: post.body,
+        publishedAt: post.publishedAt,
+        title: post.title,
+        image: post.mainImage,
+      },
     };
   }
 }
