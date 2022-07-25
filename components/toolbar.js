@@ -19,7 +19,7 @@ export function Toolbar() {
             data-bs-toggle='offcanvas'
             data-bs-target='#offcanvasNavbar'
             aria-controls='offcanvasNavbar'>
-            <span class='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon'></span>
           </button>
           <div
             className='offcanvas offcanvas-start'

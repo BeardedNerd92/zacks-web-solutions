@@ -1,5 +1,3 @@
-import { Toolbar } from "../components/toolbar";
-
 export function contact() {
   return (
     <>
