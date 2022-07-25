@@ -2,7 +2,6 @@ import ImageUrlBuilder from "@sanity/image-url";
 import Styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Footer from "../components/footer";
 
 export default function Home({ posts }) {
   const router = useRouter();
@@ -30,7 +29,7 @@ export default function Home({ posts }) {
   return (
     <>
       <section className={Styles.Home}>
-        <h1 className='text-center mb-5'>Recent Posts:</h1>
+        <h1 className='text-center mb-5'>Zack's Web Solutions</h1>
 
         <div className='row row-cols-1 row-cols-md-3 g-4 container'>
           {managePosts.length ? (
@@ -48,7 +47,6 @@ export default function Home({ posts }) {
                     src={post.mainImage}
                     alt={post.title}
                   />
-                  <caption>Date Published: {post.category}</caption>
                 </div>
               </div>
             ))
@@ -63,7 +61,7 @@ export default function Home({ posts }) {
 
 export async function getServerSideProps() {
   const query = encodeURIComponent(
-    '*[_type == "post"] | order(publishedAt desc)'
+    `*[_type == "post"] | order(publishedAt desc)`
   );
   const url = `https://ns2vruty.api.sanity.io/v1/data/query/production?query=${query}`;
 

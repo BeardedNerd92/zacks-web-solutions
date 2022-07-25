@@ -1,10 +1,14 @@
-import { Toolbar } from "../components/toolbar";
+import imageUrlBuilder from "@sanity/image-url";
 
 export function About() {
-  return (
-    <>
-      <h1>About</h1>
-    </>
-  );
+  const builder = imageUrlBuilder({
+    projectId: "ns2vruty",
+    dataset: "production",
+  });
+
+  function urlFor(source) {
+    return builder.image(source).url();
+  }
+  return <></>;
 }
 export default About;

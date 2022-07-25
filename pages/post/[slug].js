@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Toolbar } from "../../components/toolbar";
 import Styles from "../../styles/Posts.module.css";
 
-export function Post({ title, body, image, publishedAt }) {
+export function Post({ title, body, image, publishedAt, subTitle }) {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -19,17 +19,24 @@ export function Post({ title, body, image, publishedAt }) {
     <>
       <Toolbar />
       <section className='container'>
-        <h1 className='text-center mb-3'>{title}</h1>
+        <h1 className='text-center mb-3 fw-bolder'>{title}</h1>
+        <h2 className='text-center mb-3 fw-lighter'>{subTitle}</h2>
         <div className='d-flex justify-content-center'>
           {imageUrl && (
-            <img className='img-fluid mb-5' src={imageUrl} alt={title} />
+            <img
+              className='img-thumbnail mb-5'
+              src={imageUrl}
+              alt={title}
+              width={500}
+            />
           )}
         </div>
         <div className='d-flex'>
-          <caption className='text-center'>Published on: {publishedAt}</caption>
+          <caption className='text-center container fs-4 mb-3'>
+            Published {new Date(publishedAt).toDateString()}
+          </caption>
         </div>
-
-        <BlockContent blocks={body} className='lh-lg' />
+        <BlockContent blocks={body} className='lh-base container fs-4' />
       </section>
     </>
   );
@@ -56,6 +63,7 @@ export async function getServerSideProps(context) {
         body: post.body,
         publishedAt: post.publishedAt,
         title: post.title,
+        subTitle: post.subtitle,
         image: post.mainImage,
       },
     };
