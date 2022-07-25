@@ -14,7 +14,6 @@ export default function Document() {
         <link
           href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap'
           rel='stylesheet'></link>
-        <title>Zack's Web Solutions</title>
       </Head>
       <body>
         <Main />
