@@ -11,7 +11,7 @@ export function Toolbar() {
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
         <div className='container-fluid'>
           <a className='navbar-brand' onClick={() => router.push("/")}>
-            <Image src={Logo} alt="Zack's Web Solutions" />
+            Zack's Web Solutions
           </a>
           <button
             className='navbar-toggler'

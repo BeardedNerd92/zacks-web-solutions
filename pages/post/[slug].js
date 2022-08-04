@@ -23,20 +23,18 @@ export function Post({ title, body, image, publishedAt, subTitle }) {
         <h2 className='text-center mb-3 fw-lighter'>{subTitle}</h2>
         <div className='d-flex justify-content-center'>
           {imageUrl && (
-            <img
-              className='img-thumbnail mb-5'
-              src={imageUrl}
-              alt={title}
-              width={500}
-            />
+            <img className='img-fluid' src={imageUrl} alt={title} width={500} />
           )}
         </div>
         <div className='d-flex'>
-          <caption className='text-center container fs-4 mb-3'>
-            Published {new Date(publishedAt).toDateString()}
-          </caption>
+          <p className='text-center container mb-3'>
+            Published
+            <small className='text-muted'>
+              {new Date(publishedAt).toDateString()}
+            </small>
+          </p>
         </div>
-        <BlockContent blocks={body} className='lh-base container fs-4' />
+        <BlockContent blocks={body} className='lh-lg fs-5' />
       </section>
     </>
   );

@@ -29,24 +29,39 @@ export default function Home({ posts }) {
   return (
     <>
       <section className={Styles.Home}>
-        <h1 className='text-center mb-5'>Zack's Web Solutions</h1>
-
-        <div className='row row-cols-1 row-cols-md-3 g-4 container'>
+        <div className='container'>
           {managePosts.length ? (
             managePosts.map((post, index) => (
               <div
                 onClick={() => router.push(`/post/${post.slug.current}`)}
-                key={index}
-                className='col'>
+                key={index}>
                 <div
-                  className='card h-100 border-0'
+                  className='card mb-3 border-0'
                   style={{ cursor: "pointer" }}>
-                  <h2 className='card-text text-center'>{post.title}</h2>
-                  <img
-                    className='img-fluid h-100'
-                    src={post.mainImage}
-                    alt={post.title}
-                  />
+                  <div className='row g-0'>
+                    <div className='col-md-4'>
+                      <img
+                        className='img-fluid rounded-start'
+                        src={post.mainImage}
+                        alt={post.title}
+                      />
+                    </div>
+                    <div className='col-md-8'>
+                      <div className='card-body'>
+                        <h3 className='card-title'>{post.title}</h3>
+                        <p className='card-text'>
+                          {post.description}
+                          <span style={{ color: "blue" }}>..Read more</span>
+                        </p>
+                        <p className='card-text'>
+                          <small className='text-muted'>
+                            Published on{" "}
+                            {new Date(post.publishedAt).toDateString()}
+                          </small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))
