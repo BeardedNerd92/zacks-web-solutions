@@ -8,7 +8,7 @@ export function Toolbar() {
 
   return (
     <header className={Styles.Toolbar}>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top container'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top '>
         <div className='container-fluid'>
           <a className='navbar-brand' onClick={() => router.push("/")}>
             <Image src={Logo} height={75} width={75} />
