@@ -36,28 +36,22 @@ export default function Home({ posts }) {
                 onClick={() => router.push(`/post/${post.slug.current}`)}
                 key={index}>
                 <div
-                  className='card mb-3 border-0'
+                  className='card mb-5 border-0'
                   style={{ cursor: "pointer" }}>
                   <div className='row g-0'>
-                    <div className='col-md-4'>
+                    <div className='col-lg-3'>
                       <img
-                        className='img-fluid rounded-start'
+                        className='img-fluid'
                         src={post.mainImage}
                         alt={post.title}
                       />
                     </div>
-                    <div className='col-md-8'>
+                    <div className='col-md-9'>
                       <div className='card-body'>
-                        <h3 className='card-title'>{post.title}</h3>
-                        <p className='card-text'>
+                        <h3 className={Styles.Title}>{post.title}</h3>
+                        <p className={Styles.Body}>
                           {post.description}
                           <span style={{ color: "blue" }}>..Read more</span>
-                        </p>
-                        <p className='card-text'>
-                          <small className='text-muted'>
-                            Published on{" "}
-                            {new Date(post.publishedAt).toDateString()}
-                          </small>
                         </p>
                       </div>
                     </div>

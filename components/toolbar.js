@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import Styles from "../styles/toolbar.module.css";
-import Logo from "../assets/logo-min.png";
+import Logo from "../assets/logo.jpg";
 import Image from "next/image";
 
 export function Toolbar() {
   const router = useRouter();
 
   return (
-    <header className={Styles.toolbar}>
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+    <header className={Styles.Toolbar}>
+      <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top container'>
         <div className='container-fluid'>
           <a className='navbar-brand' onClick={() => router.push("/")}>
-            Zack's Web Solutions
+            <Image src={Logo} height={75} width={75} />
           </a>
           <button
             className='navbar-toggler'
@@ -36,11 +36,11 @@ export function Toolbar() {
                 data-bs-dismiss='offcanvas'
                 aria-label='Close'></button>
             </div>
-            <div className='offcanvas-body bg-dark'>
+            <div className='offcanvas-body bg-white'>
               <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
                 <li className='nav-item'>
                   <a
-                    className='nav-link active'
+                    className='nav-link'
                     aria-current='page'
                     onClick={() => router.push("/")}>
                     Home

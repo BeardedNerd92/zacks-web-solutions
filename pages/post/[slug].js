@@ -19,22 +19,28 @@ export function Post({ title, body, image, publishedAt, subTitle }) {
     <>
       <Toolbar />
       <section className='container'>
-        <h1 className='text-center mb-3 fw-bolder'>{title}</h1>
-        <h2 className='text-center mb-3 fw-lighter'>{subTitle}</h2>
+        <h1 className={Styles.Title}>{title}</h1>
+        <h2 className={Styles.SubTitle}>{subTitle}</h2>
         <div className='d-flex justify-content-center'>
           {imageUrl && (
-            <img className='img-fluid' src={imageUrl} alt={title} width={500} />
+            <img
+              className='img-fluid'
+              src={imageUrl}
+              alt={title}
+              width={700}
+              height={525}
+            />
           )}
         </div>
         <div className='d-flex'>
-          <p className='text-center container mb-3'>
-            Published
+          <p className='text-center container mt-2'>
             <small className='text-muted'>
+              Published {""}
               {new Date(publishedAt).toDateString()}
             </small>
           </p>
         </div>
-        <BlockContent blocks={body} className='lh-lg fs-5' />
+        <BlockContent blocks={body} className={Styles.Body} />
       </section>
     </>
   );
