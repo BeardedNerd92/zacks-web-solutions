@@ -44,19 +44,19 @@ export function Toolbar() {
             </div>
             <div className='offcanvas-body bg-white'>
               <ul className='navbar-nav justify-content-end flex-grow-1 pe-1'>
-                <li className='nav-item pe-2'>
-                  <Link className='nav-link' href='/'>
-                    Home
+                <li className='nav-item '>
+                  <Link href='/'>
+                    <a className='nav-link'>Home</a>
                   </Link>
                 </li>
-                <li className='nav-item pe-2'>
-                  <Link className='nav-link' href='/about'>
-                    About
+                <li className='nav-item '>
+                  <Link href='/about'>
+                    <a className='nav-link'>About</a>
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' href='/contact'>
-                    Contact
+                  <Link href='/contact'>
+                    <a className='nav-link'>Contact</a>
                   </Link>
                 </li>
               </ul>
