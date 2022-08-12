@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Styles from "../styles/toolbar.module.css";
 import Logo from "../assets/logo.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Toolbar() {
   const router = useRouter();
@@ -9,15 +10,15 @@ export function Toolbar() {
   return (
     <header className={Styles.Toolbar}>
       <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top '>
-        <div className='container-fluid'>
-          <a className='navbar-brand' href='/'>
-            <Image
-              src={Logo}
-              height={75}
-              width={75}
-              alt="Zack's Web Solutions"
-            />
-          </a>
+        <div className='container'>
+          {" "}
+          <Image
+            className='navbar-brand'
+            src={Logo}
+            height={75}
+            width={75}
+            alt="Zack's Web Solutions"
+          />
           <button
             className='navbar-toggler'
             type='button'
@@ -42,21 +43,21 @@ export function Toolbar() {
                 aria-label='Close'></button>
             </div>
             <div className='offcanvas-body bg-white'>
-              <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
-                <li className='nav-item'>
-                  <a className='nav-link' aria-current='page' href='/'>
+              <ul className='navbar-nav justify-content-end flex-grow-1 pe-1'>
+                <li className='nav-item pe-2'>
+                  <Link className='nav-link' href='/'>
                     Home
-                  </a>
+                  </Link>
                 </li>
-                <li className='nav-item'>
-                  <a className='nav-link' href='/about'>
+                <li className='nav-item pe-2'>
+                  <Link className='nav-link' href='/about'>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link' href='/contact'>
+                  <Link className='nav-link' href='/contact'>
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
