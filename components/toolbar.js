@@ -10,8 +10,13 @@ export function Toolbar() {
     <header className={Styles.Toolbar}>
       <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top '>
         <div className='container-fluid'>
-          <a className='navbar-brand' onClick={() => router.push("/")}>
-            <Image src={Logo} height={75} width={75} />
+          <a className='navbar-brand' href='/'>
+            <Image
+              src={Logo}
+              height={75}
+              width={75}
+              alt="Zack's Web Solutions"
+            />
           </a>
           <button
             className='navbar-toggler'
@@ -39,22 +44,17 @@ export function Toolbar() {
             <div className='offcanvas-body bg-white'>
               <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
                 <li className='nav-item'>
-                  <a
-                    className='nav-link'
-                    aria-current='page'
-                    onClick={() => router.push("/")}>
+                  <a className='nav-link' aria-current='page' href='/'>
                     Home
                   </a>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link' onClick={() => router.push("/about")}>
+                  <a className='nav-link' href='/about'>
                     About
                   </a>
                 </li>
                 <li className='nav-item'>
-                  <a
-                    className='nav-link'
-                    onClick={() => router.push("/contact")}>
+                  <a className='nav-link' href='/contact'>
                     Contact
                   </a>
                 </li>

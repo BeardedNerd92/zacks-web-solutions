@@ -7,7 +7,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta
+          name='description'
+          content="Zack's Web Solutions providing solutions for the web"
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>Zack's Web Solutions</title>
       </Head>
       <Toolbar />
